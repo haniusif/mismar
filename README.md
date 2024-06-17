@@ -51,5 +51,5 @@ The **Mismar Module** is an unofficial Laravel module providing API endpoints fo
 4.**Run Migrations:**
 
 Run the migrations to create the necessary database tables:
- 
-      php artisan migrate
+   ```bash
+   php artisan migrate

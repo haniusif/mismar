@@ -26,4 +26,4 @@ The **Mismar Module** is an unofficial Laravel module providing API endpoints fo
    Clone the repository to your local machine:
 
    ```bash
-   git clone https://github.com/<username>/laravel-mismar-module.git
+   git clone git@github.com:haniusif/mismar.git

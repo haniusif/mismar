@@ -21,15 +21,14 @@ The **Mismar Module** is an unofficial Laravel module providing API endpoints fo
 
 ### Steps
 
-
-
-
 1. **Copy the Module:**
 
-    Go to module directory into your Laravel project's :
+   Go to module directory into your Laravel project's :
 
-    ```bash
-    cd  /path/to/your/laravel/modules/
+   ```bash
+   cd  /path/to/your/laravel/modules/
+
+   ```
 
 2. **Clone the Repository:**
 
@@ -37,22 +36,45 @@ The **Mismar Module** is an unofficial Laravel module providing API endpoints fo
 
    ```bash
    git clone git@github.com:haniusif/mismar.git Mismar
-   
 
-3. **Register the Service Provider:**
+   ```
 
-     Add the service provider to the config/app.php file to ensure it gets loaded by Laravel:
+3. **Ensure Composer Autoloading:**
 
-    
-     ```bash
-      'providers' => [
-       // Other Service Providers
-       Modules\Mismar\Providers\MismarServiceProvider::class,
-      ],
+   Edit the composer.json file to include the Modules namespace:
 
+   ```bash
+   "autoload": {
+       "psr-4": {
+
+           "Modules\\Mismar\\": "modules/Mismar/src/"
+       }
+    },
+
+   ```
+
+4. **Run composer dump-autoload:**
+
+   ```bash
+   composer dump-autoload
+
+   ```
+
+5. **Register the Service Provider:**
+
+   Add the service provider to the config/app.php file to ensure it gets loaded by Laravel:
+
+   ```bash
+    'providers' => [
+     // Other Service Providers
+     Modules\Mismar\Providers\MismarServiceProvider::class,
+    ],
+   ```
 
 4.**Run Migrations:**
 
 Run the migrations to create the necessary database tables:
-   ```bash
-   php artisan migrate
+
+```bash
+php artisan migrate
+```

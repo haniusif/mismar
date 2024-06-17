@@ -40,7 +40,7 @@ The **Mismar Module** is an unofficial Laravel module providing API endpoints fo
 
 Add the service provider to the config/app.php file to ensure it gets loaded by Laravel:
 
-  ```bash
+```bash
 'providers' => [
     // Other Service Providers
     Modules\Mismar\Providers\MismarServiceProvider::class,
@@ -51,5 +51,5 @@ Add the service provider to the config/app.php file to ensure it gets loaded by 
 
 Run the migrations to create the necessary database tables:
 
-  ```bash
+```bash
 php artisan migrate

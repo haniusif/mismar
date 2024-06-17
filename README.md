@@ -21,20 +21,23 @@ The **Mismar Module** is an unofficial Laravel module providing API endpoints fo
 
 ### Steps
 
-1. **Clone the Repository:**
-
-   Clone the repository to your local machine:
-
-   ```bash
-   git clone git@github.com:haniusif/mismar.git
 
 
-2. **Copy the Module:**
 
-    Copy the Mismar module into your Laravel project's modules directory:
+1. **Copy the Module:**
+
+    Go to module directory into your Laravel project's :
 
     ```bash
-    cp -r mismar/Mismar /path/to/your/laravel/project/modules/
+    cd  /path/to/your/laravel/modules/
+
+2. **Clone the Repository:**
+
+   Clone the repository to your local machine at (/path/to/your/laravel/modules/):
+
+   ```bash
+   git clone git@github.com:haniusif/mismar.git as Mismar
+   
 
 3. **Register the Service Provider:**
 

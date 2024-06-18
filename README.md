@@ -78,3 +78,20 @@ Run the migrations to create the necessary database tables:
 ```bash
 php artisan migrate
 ```
+
+
+
+4.**Update .env file:**
+
+Set live & staging token:
+
+```bash
+MISMAR_DEFAULT_STATUS=pending
+MISMAR_LIVE_TOKEN=your_live_token_here
+MISMAR_STAGING_TOKEN=your_staging_token_here
+```
+
+
+
+
+

@@ -24,7 +24,6 @@ class UpdateMismarOrderRequest extends FormRequest
     public function rules()
     {
         return [
-            'mismar_order_id' => 'required|string|unique:mismar_orders,mismar_order_id,' . $this->route('mismar_order'),
             'mismar_customer_phone' => 'required|string',
             'mismar_car_plate' => 'required|string',
             'mismar_order_time' => 'required|date|date_format:Y-m-d H:i|after:now',

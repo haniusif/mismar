@@ -26,7 +26,7 @@ class MismarController extends Controller
     public function store(StoreMismarOrderRequest $request)
     {
         $data = $request->validated();
-        $data['mismar_order_time'] = Carbon::parse($data['mismar_order_time'])->format('Y-m-d H:i:s');
+        $data['mismar_order_time'] = Carbon::parse($data['mismar_order_time'])->format('Y-m-d H:i');
         $order = MismarOrder::create($data);
 
         return new MismarOrderResource($order);
@@ -36,16 +36,26 @@ class MismarController extends Controller
     {
         $order = MismarOrder::findOrFail($id);
         $data = $request->validated();
-        $data['mismar_order_time'] = Carbon::parse($data['mismar_order_time'])->format('Y-m-d H:i:s');
+        $data['mismar_order_time'] = Carbon::parse($data['mismar_order_time'])->format('Y-m-d H:i');
         $order->update($data);
 
         return new MismarOrderResource($order);
     }
 
-    public function destroy($id)
+    public function change_order_time(UpdateMismarOrderRequest $request, $id)
     {
         $order = MismarOrder::findOrFail($id);
-        $order->delete();
+        $data = $request->validated();
+        $data['mismar_order_time'] = Carbon::parse($data['mismar_order_time'])->format('Y-m-d H:i');
+        $order->update($data);
+
+        return new MismarOrderResource($order);
+    }
+
+    public function cancel_order($id)
+    {
+        $order = MismarOrder::findOrFail($id);
+        $order->cancel();
 
         return response()->json(null, 204);
     }
